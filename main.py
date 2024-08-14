@@ -36,4 +36,4 @@ widget.show()
 try:
     sys.exit(app.exec_())
 except:
-    print("Exiting")
+    print("You close application")
