@@ -14,11 +14,17 @@ from PyQt5.QtGui import QPixmap, QIcon # для работы с изображе
 
 # Окно приветствия
 class WelcomeScreen(QDialog):
+    """
+    Это класс окна приветствия.
+    """
     def __init__(self):
+        """
+        Это конструктор класса
+        """
         super(WelcomeScreen, self).__init__()
         loadUi("welcomescreen.ui",self) # загружаем интерфейс
 
-# запучк приложения
+# запуcк приложения
 app = QApplication(sys.argv)
 
 # позволяте менять страницы в окне
