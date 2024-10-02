@@ -21,7 +21,7 @@
   </property>
   <property name="windowIcon">
    <iconset theme="accessories-dictionary">
-    <selectedon>../../Загрузки/icons8-обслуживание-принтера-80.png</selectedon>
+    <selectedon>../../../../../logo.png</selectedon>
    </iconset>
   </property>
   <property name="toolTipDuration">
@@ -63,7 +63,7 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgb
            <enum>Qt::AutoText</enum>
           </property>
           <property name="pixmap">
-           <pixmap>../../Загрузки/icons8-обслуживание-принтера-80.png</pixmap>
+           <pixmap>logo.png</pixmap>
           </property>
           <property name="scaledContents">
            <bool>true</bool>
