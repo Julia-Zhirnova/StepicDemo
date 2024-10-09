@@ -22,8 +22,11 @@ class WelcomeScreen(QDialog):
         loadUi("welcomescreen.ui",self) # загружаем интерфейс.
         self.PasswordField.setEchoMode(QtWidgets.QLineEdit.Password) # скрываем пароль
         self.SignInButton.clicked.connect(self.signupfunction) # нажати на кнопку и вызов функции
+        # Подключение кнопок к методам переключения страниц с использованием lambda
+        #self.SignInButton.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.Zakazchik))
 
     def signupfunction(self): # создаем функцию регистрации
+        
         user = self.LoginField.text() # создаем пользователя и получаем из поля ввода логина введенный текст
         password = self.PasswordField.text() # создаем пароль и получаем из поля ввода пароля введенный текст
         print(user, password) # выводит логин и пароль
@@ -38,7 +41,19 @@ class WelcomeScreen(QDialog):
 
         cur.execute('SELECT typeID FROM users WHERE login=(?) and password=(?)', [user, password]) # получаем тип пользователя, логин и пароль которого был введен
         typeUser = cur.fetchone() # получает только один тип пользователя
-        print(typeUser[0]) # выводит тип пользователя без скобок                     
+        print(typeUser[0]) # выводит тип пользователя без скобок       
+        if typeUser[0] == 4:
+            self.stackedWidget.setCurrentWidget(self.Zakazchik)
+            self.lybaya = Zakazchik()
+        elif typeUser[0] == 2:
+            self.stackedWidget.setCurrentWidget(self.Master)
+            self.lybaya = Zakazchik()
+
 
         conn.commit() # сохраняет в подключении запросы
         conn.close() # закрываем подключение
+
+class Zakazchik(QDialog):
+    def __init__(self):        
+        super(Zakazchik, self).__init__()
+        print("sgaclusa")
