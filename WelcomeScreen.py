@@ -16,4 +16,4 @@ class WelcomeScreen(QDialog):
         Это конструктор класса
         """
         super(WelcomeScreen, self).__init__()
-        loadUi("welcomescreen.ui",self) # загружаем интерфейс
+        loadUi("welcomescreen.ui",self) # загружаем интерфейс.
