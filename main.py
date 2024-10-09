@@ -11,7 +11,6 @@ from PyQt5.QtGui import QPixmap, QIcon # для работы с изображе
 
 from WelcomeScreen import WelcomeScreen
 
-
 # запуcк приложения
 app = QApplication(sys.argv)
 
