@@ -27,6 +27,16 @@
   <property name="toolTipDuration">
    <number>0</number>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton {
+background-color: rgb(4, 160, 255);
+color: rgb(255, 255, 255);
+border: 0px;
+}
+QWidget
+{font: &quot;Comic Sans MS&quot;;}
+</string>
+  </property>
   <property name="sizeGripEnabled">
    <bool>false</bool>
   </property>
@@ -75,6 +85,8 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgb
           <property name="font">
            <font>
             <pointsize>20</pointsize>
+            <italic>false</italic>
+            <bold>false</bold>
            </font>
           </property>
           <property name="text">
@@ -97,6 +109,9 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgb
      </property>
      <property name="autoFillBackground">
       <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
      </property>
      <widget class="QWidget" name="Avtorisation">
       <property name="layoutDirection">
@@ -125,6 +140,7 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgb
            <property name="font">
             <font>
              <pointsize>24</pointsize>
+             <italic>false</italic>
              <bold>false</bold>
             </font>
            </property>
@@ -144,6 +160,8 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgb
            <property name="font">
             <font>
              <pointsize>14</pointsize>
+             <italic>false</italic>
+             <bold>false</bold>
             </font>
            </property>
            <property name="layoutDirection">
@@ -168,6 +186,8 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgb
            <property name="font">
             <font>
              <pointsize>14</pointsize>
+             <italic>false</italic>
+             <bold>false</bold>
             </font>
            </property>
            <property name="text">
@@ -186,11 +206,12 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgb
            <property name="font">
             <font>
              <pointsize>16</pointsize>
+             <italic>false</italic>
+             <bold>false</bold>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color:  rgba(4, 160, 255, 255);
-</string>
+            <string notr="true"/>
            </property>
            <property name="text">
             <string>Войти</string>
@@ -202,6 +223,8 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgb
            <property name="font">
             <font>
              <pointsize>14</pointsize>
+             <italic>false</italic>
+             <bold>false</bold>
             </font>
            </property>
            <property name="styleSheet">
@@ -231,6 +254,23 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgb
        </property>
        <property name="text">
         <string>Заказчик</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton">
+       <property name="geometry">
+        <rect>
+         <x>360</x>
+         <y>120</y>
+         <width>103</width>
+         <height>36</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton#pushButton {background-color: rgb(255,125,150);
+border: 5x;}</string>
+       </property>
+       <property name="text">
+        <string>PushButton</string>
        </property>
       </widget>
      </widget>
