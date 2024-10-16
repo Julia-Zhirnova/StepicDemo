@@ -24,6 +24,9 @@ class WelcomeScreen(QDialog):
         self.SignInButton.clicked.connect(self.signupfunction) # нажати на кнопку и вызов функции
         # Подключение кнопок к методам переключения страниц с использованием lambda
         #self.SignInButton.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.Zakazchik))
+        self.AvtorButton.clicked.connect(self.sign_out)
+        self.AvtorButton.hide()
+        self.stackedWidget.currentChanged.connect(self.hiddenButton)
 
     def signupfunction(self): # создаем функцию регистрации
         
@@ -56,6 +59,15 @@ class WelcomeScreen(QDialog):
 
             conn.commit() # сохраняет в подключении запросы
             conn.close() # закрываем подключение
+    
+    def hiddenButton(self):
+        if self.stackedWidget.currentWidget() == self.Avtorisation:  
+            self.AvtorButton.hide()
+        else:
+            self.AvtorButton.show()
+    
+    def sign_out(self):
+        self.stackedWidget.setCurrentWidget(self.Avtorisation)
 
 class Manager(QDialog):
     def __init__(self):        
