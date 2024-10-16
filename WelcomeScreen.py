@@ -34,26 +34,45 @@ class WelcomeScreen(QDialog):
         if len(user)==0 or len(password)==0: # если пользователь оставил пустые поля
             self.ErrorField.setText("Заполните все поля") # выводим ошибку в поле
         else:
-            self.ErrorField.setText("Все ок") # выводим что все хорошо в поле
+            conn = sqlite3.connect("uchet.db") # подключение к базе данных в () изменить на название своей БД
+            cur = conn.cursor() # переменная для запросов
 
-        conn = sqlite3.connect("uchet.db") # подключение к базе данных в () изменить на название своей БД
-        cur = conn.cursor() # переменная для запросов
+            cur.execute('SELECT typeID FROM users WHERE login=(?) and password=(?)', [user, password]) # получаем тип пользователя, логин и пароль которого был введен
+            typeUser = cur.fetchone() # получает только один тип пользователя
+            if typeUser == None:
+                self.ErrorField.setText("Пользователь с такими данными не найден")
+            elif typeUser[0] == 1:
+                self.stackedWidget.setCurrentWidget(self.Manager)
+                self.lybaya = Manager()
+            elif typeUser[0] == 2:
+                self.stackedWidget.setCurrentWidget(self.Master)
+                self.lybaya = Master()
+            elif typeUser[0] == 3:
+                self.stackedWidget.setCurrentWidget(self.Operator)
+                self.lybaya = Operator()
+            elif typeUser[0] == 4:
+                self.stackedWidget.setCurrentWidget(self.Zakazchik)
+                self.lybaya = Zakazchik()            
 
-        cur.execute('SELECT typeID FROM users WHERE login=(?) and password=(?)', [user, password]) # получаем тип пользователя, логин и пароль которого был введен
-        typeUser = cur.fetchone() # получает только один тип пользователя
-        print(typeUser[0]) # выводит тип пользователя без скобок       
-        if typeUser[0] == 4:
-            self.stackedWidget.setCurrentWidget(self.Zakazchik)
-            self.lybaya = Zakazchik()
-        elif typeUser[0] == 2:
-            self.stackedWidget.setCurrentWidget(self.Master)
-            self.lybaya = Zakazchik()
+            conn.commit() # сохраняет в подключении запросы
+            conn.close() # закрываем подключение
 
+class Manager(QDialog):
+    def __init__(self):        
+        super(Manager, self).__init__()
+        print("Проверка открытия страницы")
 
-        conn.commit() # сохраняет в подключении запросы
-        conn.close() # закрываем подключение
+class Master(QDialog):
+    def __init__(self):        
+        super(Master, self).__init__()
+        print("Проверка открытия страницы")
+
+class Operator(QDialog):
+    def __init__(self):        
+        super(Operator, self).__init__()
+        print("Проверка открытия страницы")
 
 class Zakazchik(QDialog):
     def __init__(self):        
         super(Zakazchik, self).__init__()
-        print("sgaclusa")
+        print("Проверка открытия страницы")
