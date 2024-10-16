@@ -43,6 +43,7 @@ class WelcomeScreen(QDialog):
         if len(user)==0 or len(password)==0: # если пользователь оставил пустые поля
             self.ErrorField.setText("Заполните все поля") # выводим ошибку в поле
         else:
+            self.ErrorField.setText(" ") # выводим ошибку в поле
             conn = sqlite3.connect("uchet.db") # подключение к базе данных в () изменить на название своей БД
             cur = conn.cursor() # переменная для запросов
 
