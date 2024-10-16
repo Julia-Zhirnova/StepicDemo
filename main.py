@@ -9,7 +9,7 @@ import sys # взаимодействие с интерпретатором
 
 from PyQt5.QtGui import QPixmap, QIcon # для работы с изображениями и загрузки иконок
 
-from WelcomeScreen import WelcomeScreen
+from pages.WelcomeScreen import WelcomeScreen
 
 # запуcк приложения
 app = QApplication(sys.argv)
@@ -21,7 +21,7 @@ widget.addWidget(welcome)
 
 # загружаем иконку
 icon = QIcon()
-icon.addPixmap(QPixmap("logo.png"), QIcon.Normal, QIcon.Off)
+icon.addPixmap(QPixmap("media/logo.png"), QIcon.Normal, QIcon.Off)
 widget.setWindowIcon(icon) 
 widget.show()
 
