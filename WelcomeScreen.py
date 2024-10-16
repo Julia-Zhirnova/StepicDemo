@@ -60,19 +60,19 @@ class WelcomeScreen(QDialog):
 class Manager(QDialog):
     def __init__(self):        
         super(Manager, self).__init__()
-        print("Проверка открытия страницы")
+        print("Проверка открытия страницы менеджера")
 
 class Master(QDialog):
     def __init__(self):        
         super(Master, self).__init__()
-        print("Проверка открытия страницы")
+        print("Проверка открытия страницы мастера")
 
 class Operator(QDialog):
     def __init__(self):        
         super(Operator, self).__init__()
-        print("Проверка открытия страницы")
+        print("Проверка открытия страницы оператора")
 
 class Zakazchik(QDialog):
     def __init__(self):        
         super(Zakazchik, self).__init__()
-        print("Проверка открытия страницы")
+        print("Проверка открытия страницы заказчика")
