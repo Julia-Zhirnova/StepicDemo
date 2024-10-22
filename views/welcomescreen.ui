@@ -44,138 +44,170 @@ QWidget
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="1" column="0">
-    <widget class="QStackedWidget" name="stackedWidget">
-     <property name="layoutDirection">
-      <enum>Qt::LeftToRight</enum>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-     <property name="currentIndex">
-      <number>0</number>
-     </property>
-     <widget class="QWidget" name="Avtorisation">
-      <property name="layoutDirection">
-       <enum>Qt::LeftToRight</enum>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_2">
-       <property name="leftMargin">
-        <number>200</number>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QStackedWidget" name="stackedWidget">
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
        </property>
-       <property name="topMargin">
-        <number>50</number>
+       <property name="autoFillBackground">
+        <bool>false</bool>
        </property>
-       <property name="rightMargin">
-        <number>200</number>
+       <property name="styleSheet">
+        <string notr="true"/>
        </property>
-       <property name="bottomMargin">
-        <number>50</number>
+       <property name="currentIndex">
+        <number>4</number>
        </property>
-       <item row="0" column="0">
-        <layout class="QVBoxLayout" name="verticalLayout">
-         <property name="spacing">
-          <number>12</number>
+       <widget class="QWidget" name="Avtorisation">
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <property name="leftMargin">
+          <number>50</number>
          </property>
-         <item>
-          <widget class="QLabel" name="label_3">
-           <property name="font">
-            <font>
-             <pointsize>24</pointsize>
-             <italic>false</italic>
-             <bold>false</bold>
-            </font>
+         <property name="topMargin">
+          <number>50</number>
+         </property>
+         <property name="rightMargin">
+          <number>50</number>
+         </property>
+         <property name="bottomMargin">
+          <number>50</number>
+         </property>
+         <item row="0" column="0">
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <property name="spacing">
+            <number>12</number>
            </property>
+           <item>
+            <widget class="QLabel" name="label_3">
+             <property name="font">
+              <font>
+               <pointsize>24</pointsize>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>АВТОРИЗАЦИЯ</string>
+             </property>
+             <property name="scaledContents">
+              <bool>false</bool>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_4">
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::LeftToRight</enum>
+             </property>
+             <property name="autoFillBackground">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string>Логин</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="LoginField"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_5">
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Пароль</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="PasswordField"/>
+           </item>
+           <item>
+            <widget class="QPushButton" name="SignInButton">
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>Войти</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="ErrorField">
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 0, 0);</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="Zakazchik">
+        <layout class="QGridLayout" name="gridLayout_6">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_6">
            <property name="text">
-            <string>АВТОРИЗАЦИЯ</string>
-           </property>
-           <property name="scaledContents">
-            <bool>false</bool>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
+            <string>Заказчик</string>
            </property>
           </widget>
          </item>
-         <item>
-          <widget class="QLabel" name="label_4">
-           <property name="font">
-            <font>
-             <pointsize>14</pointsize>
-             <italic>false</italic>
-             <bold>false</bold>
-            </font>
-           </property>
-           <property name="layoutDirection">
-            <enum>Qt::LeftToRight</enum>
-           </property>
-           <property name="autoFillBackground">
-            <bool>false</bool>
-           </property>
+         <item row="1" column="0">
+          <widget class="QTableWidget" name="tableZakazchikaZayavki"/>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="Master">
+        <layout class="QGridLayout" name="gridLayout_5">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_7">
            <property name="text">
-            <string>Логин</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="LoginField"/>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_5">
-           <property name="font">
-            <font>
-             <pointsize>14</pointsize>
-             <italic>false</italic>
-             <bold>false</bold>
-            </font>
-           </property>
-           <property name="text">
-            <string>Пароль</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="PasswordField"/>
-         </item>
-         <item>
-          <widget class="QPushButton" name="SignInButton">
-           <property name="font">
-            <font>
-             <pointsize>14</pointsize>
-             <italic>false</italic>
-             <bold>false</bold>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true"/>
-           </property>
-           <property name="text">
-            <string>Войти</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="ErrorField">
-           <property name="font">
-            <font>
-             <pointsize>14</pointsize>
-             <italic>false</italic>
-             <bold>false</bold>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: rgb(255, 0, 0);</string>
-           </property>
-           <property name="text">
-            <string/>
+            <string>Мастер</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
@@ -183,58 +215,41 @@ QWidget
           </widget>
          </item>
         </layout>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="Zakazchik">
-      <layout class="QGridLayout" name="gridLayout_6">
-       <item row="0" column="0">
-        <widget class="QLabel" name="label_6">
-         <property name="text">
-          <string>Заказчик</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QTableWidget" name="tableZakazchikaZayavki"/>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="Master">
-      <layout class="QGridLayout" name="gridLayout_5">
-       <item row="0" column="0">
-        <widget class="QLabel" name="label_7">
-         <property name="text">
-          <string>Мастер</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="Operator">
-      <layout class="QGridLayout" name="gridLayout_3">
-       <item row="0" column="0">
-        <widget class="QLabel" name="label_9">
-         <property name="text">
-          <string>Оператор</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QTableWidget" name="tableVseZayavki"/>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="Manager">
-      <layout class="QGridLayout" name="gridLayout_4">
-       <item row="0" column="0">
+       </widget>
+       <widget class="QWidget" name="Table"/>
+       <widget class="QWidget" name="Operator">
+        <layout class="QGridLayout" name="gridLayout_3">
+         <item row="1" column="2">
+          <widget class="QTextEdit" name="textEdit"/>
+         </item>
+         <item row="0" column="2">
+          <widget class="QLabel" name="label_9">
+           <property name="text">
+            <string>Оператор</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QTextEdit" name="textEdit_2"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QTextEdit" name="textEdit_3"/>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="Manager">
         <widget class="QLabel" name="label_8">
+         <property name="geometry">
+          <rect>
+           <x>552</x>
+           <y>6</y>
+           <width>74</width>
+           <height>18</height>
+          </rect>
+         </property>
          <property name="text">
           <string>Менеджер</string>
          </property>
@@ -242,10 +257,10 @@ QWidget
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
-       </item>
-      </layout>
-     </widget>
-    </widget>
+       </widget>
+      </widget>
+     </item>
+    </layout>
    </item>
    <item row="0" column="0">
     <widget class="QWidget" name="widget" native="true">
@@ -313,6 +328,13 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgb
        </widget>
       </item>
      </layout>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QPushButton" name="pushButton">
+     <property name="text">
+      <string>PushButton</string>
+     </property>
     </widget>
    </item>
   </layout>
