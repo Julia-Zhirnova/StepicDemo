@@ -228,7 +228,7 @@ QWidget
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QTableWidget" name="tableWidget"/>
+        <widget class="QTableWidget" name="tableVseZayavki"/>
        </item>
       </layout>
      </widget>
