@@ -7,18 +7,31 @@ from PyQt5.QtWidgets import (
 import sqlite3
 
 class Zakazchik(QDialog):
-    def __init__(self, table_widget):        
+    def __init__(self, table_widget, userID):        
         super(Zakazchik, self).__init__()
         print("Проверка открытия страницы заказчика")
         self.tableZakazchikaZayavki = table_widget
         print(self.tableZakazchikaZayavki)
         print(table_widget)
-        self.showdata()
+        self.showdata(userID)
 
-    def showdata(self):
+    def showdata(self, userID):
         conn1 = sqlite3.connect("uchet.db")
         cur1 = conn1.cursor()
-        data = cur1.execute("SELECT * FROM requests")
+        print(userID[0])
+        data = cur1.execute(f"""SELECT
+                                r.IDrequest AS "Идентификатор заявки", 
+                                ot.orgTechType AS "ID типа техники",
+                                r.orgTechModel AS "Модель техники",
+                                r.problemDescryption AS "Описание проблемы",
+                                rs.requestStatus AS "ID статуса заявки"  
+                                FROM 
+                                    requests r
+                                LEFT JOIN 
+                                    orgTechTypes ot ON r.orgTechTypeID = ot.IDorgTechType
+                                LEFT JOIN 
+                                    requestStatuses rs ON r.requestStatusID = rs.IDrequestStatus
+                                    WHERE r.clientID = {userID[0]};""")
         col_name = [i[0] for i in data.description]
         print(col_name)
         data_rows = data.fetchall()

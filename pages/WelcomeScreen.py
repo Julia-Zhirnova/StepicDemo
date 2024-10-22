@@ -67,7 +67,9 @@ class WelcomeScreen(QDialog):
             elif typeUser[0] == 4:
                 self.tableZakazchikaZayavki = self.findChild(QTableWidget, 'tableZakazchikaZayavki')
                 self.stackedWidget.setCurrentWidget(self.Zakazchik)
-                self.lybaya = Zakazchik(self.tableZakazchikaZayavki)      
+                cur.execute('SELECT IDuser FROM users WHERE login=(?) and password=(?)', [user, password]) # получаем тип пользователя, логин и пароль которого был введен
+                userID = cur.fetchone() # получает только один тип пользователя
+                self.lybaya = Zakazchik(self.tableZakazchikaZayavki, userID)      
                     
            
             conn.commit() # сохраняет в подключении запросы

@@ -19,17 +19,26 @@ class Operator(QDialog):
         conn1 = sqlite3.connect("uchet.db")
         cur1 = conn1.cursor()
         data = cur1.execute(f"""SELECT
-                                IDrequest AS "Идентификатор заявки",
-                                startDate AS "Дата начала заявки",
-                                orgTechTypeID AS "ID типа техники",
-                                orgTechModel AS "Модель техники",
-                                problemDescryption AS "Описание проблемы",
-                                requestStatusID AS "ID статуса заявки",
-                                completionDate AS "Дата завершения",
-                                repairParts AS "Замененные запчасти",
-                                masterID AS "ID мастера",
-                                clientID AS "ID клиента"
-                                FROM requests;""")
+                                r.IDrequest AS "Идентификатор заявки",
+                                r.startDate AS "Дата начала заявки",
+                                ot.orgTechType AS "ID типа техники",
+                                r.orgTechModel AS "Модель техники",
+                                r.problemDescryption AS "Описание проблемы",
+                                rs.requestStatus AS "ID статуса заявки",
+                                r.completionDate AS "Дата завершения",
+                                r.repairParts AS "Замененные запчасти",
+                                m.fio AS "ID мастера",
+                                c.fio AS "ID клиента"
+                                FROM 
+                                    requests r
+                                LEFT JOIN 
+                                    orgTechTypes ot ON r.orgTechTypeID = ot.IDorgTechType
+                                LEFT JOIN 
+                                    requestStatuses rs ON r.requestStatusID = rs.IDrequestStatus
+                                LEFT JOIN 
+                                    users m ON r.masterID = m.IDuser
+                                LEFT JOIN 
+                                    users c ON r.clientID = c.IDuser;""")
         col_name = [i[0] for i in data.description]
         print(col_name)
         data_rows = data.fetchall()
