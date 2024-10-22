@@ -2,7 +2,8 @@
 #  с которым пользователь может взаимодействовать 
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import (    
-    QDialog # это базовый класс диалогового окна
+    QDialog, # это базовый класс диалогового окна
+    QTableWidget
 )
 
 from PyQt5.uic import loadUi # загрузка интерфейса, созданного в Qt Creator
@@ -33,6 +34,7 @@ class WelcomeScreen(QDialog):
         self.AvtorButton.clicked.connect(self.sign_out)
         self.AvtorButton.hide()
         self.stackedWidget.currentChanged.connect(self.hiddenButton)
+        
 
     def signupfunction(self): # создаем функцию регистрации
         
@@ -58,12 +60,18 @@ class WelcomeScreen(QDialog):
                 self.stackedWidget.setCurrentWidget(self.Master)
                 self.lybaya = Master()
             elif typeUser[0] == 3:
+                self.tableVseZayavki = self.findChild(QTableWidget, 'tableVseZayavki')
+                #self.pages = {
+                #    self.stackedWidget.currentWidget(): Operator(self.tableVseZayavki)            
+                #}
                 self.stackedWidget.setCurrentWidget(self.Operator)
-                self.lybaya = Operator()
+                self.lybaya = Operator(self.tableVseZayavki)
             elif typeUser[0] == 4:
+                self.tableZakazchikaZayavki = self.findChild(QTableWidget, 'tableZakazchikaZayavki')
                 self.stackedWidget.setCurrentWidget(self.Zakazchik)
-                self.lybaya = Zakazchik()            
+                self.lybaya = Zakazchik(self.tableZakazchikaZayavki)         
 
+            
             conn.commit() # сохраняет в подключении запросы
             conn.close() # закрываем подключение
     
