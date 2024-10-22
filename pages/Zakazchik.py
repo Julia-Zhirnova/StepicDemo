@@ -11,6 +11,8 @@ class Zakazchik(QDialog):
         super(Zakazchik, self).__init__()
         print("Проверка открытия страницы заказчика")
         self.tableZakazchikaZayavki = table_widget
+        print(self.tableZakazchikaZayavki)
+        print(table_widget)
         self.showdata()
 
     def showdata(self):

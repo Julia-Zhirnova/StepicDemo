@@ -218,7 +218,7 @@ QWidget
           </widget>
          </item>
          <item row="1" column="0">
-          <widget class="QTableView" name="tableMasteraZayavki"/>
+          <widget class="QTableWidget" name="tableMasteraZayavki"/>
          </item>
         </layout>
        </widget>
@@ -235,7 +235,7 @@ QWidget
           </widget>
          </item>
          <item row="1" column="0">
-          <widget class="QTableView" name="tableVseZayavki"/>
+          <widget class="QTableWidget" name="tableVseZayavki"/>
          </item>
         </layout>
        </widget>

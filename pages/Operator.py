@@ -11,6 +11,8 @@ class Operator(QDialog):
         super(Operator, self).__init__()
         print("Проверка открытия страницы оператора")
         self.tableVseZayavki = table_widget
+        print(self.tableVseZayavki)
+        print(table_widget)
         self.showdata()
 
     def showdata(self):

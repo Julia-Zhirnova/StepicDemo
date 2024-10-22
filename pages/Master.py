@@ -11,6 +11,8 @@ class Master(QDialog):
         super(Master, self).__init__()
         print("Проверка открытия страницы мастера")
         self.tableMasteraZayavki = table_widget
+        print(self.tableMasteraZayavki)
+        print(table_widget)
         self.showdata()
 
     def showdata(self):

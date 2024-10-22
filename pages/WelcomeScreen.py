@@ -28,12 +28,23 @@ class WelcomeScreen(QDialog):
         super(WelcomeScreen, self).__init__()
         loadUi("views/welcomescreen.ui",self) # загружаем интерфейс.
         self.PasswordField.setEchoMode(QtWidgets.QLineEdit.Password) # скрываем пароль
+        self.table1 = self.findChild(QTableWidget, "tableMasteraZayavki")
+        print("1", self.table1)        
+        self.table2 = self.findChild(QTableWidget, "tableVseZayavki")
+        print("2", self.table2)
+        self.table3 = self.findChild(QTableWidget, "tableZakazchikaZayavki")
+        print("3", self.table3)
         self.SignInButton.clicked.connect(self.signupfunction) # нажати на кнопку и вызов функции
         # Подключение кнопок к методам переключения страниц с использованием lambda
         #self.SignInButton.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.Zakazchik))
         self.AvtorButton.clicked.connect(self.sign_out)
         self.AvtorButton.hide()
         self.stackedWidget.currentChanged.connect(self.hiddenButton)
+        '''        
+        self.tableMasteraZayavki = self.findChild(QTableWidget, 'tableMasteraZayavki')
+        self.tableVseZayavki = self.findChild(QTableWidget, 'tableVseZayavki')
+        self.tableZakazchikaZayavki = self.findChild(QTableWidget, 'tableZakazchikaZayavki')
+        '''
         
 
     def signupfunction(self): # создаем функцию регистрации
@@ -57,17 +68,20 @@ class WelcomeScreen(QDialog):
                 self.stackedWidget.setCurrentWidget(self.Manager)
                 self.lybaya = Manager()
             elif typeUser[0] == 2:
-                self.tableMasteraZayavki = self.findChild(QTableWidget, 'tableMasteraZayavki')
+                
                 self.stackedWidget.setCurrentWidget(self.Master)
-                self.lybaya = Master(self.tableMasteraZayavki)
+                #self.lybaya = Master(self.tableMasteraZayavki)
+                self.lybaya = Master(self.table1)
             elif typeUser[0] == 3:
-                #self.tableVseZayavki = self.findChild(QTableWidget, 'tableVseZayavki')                
+                                
                 self.stackedWidget.setCurrentWidget(self.Operator)
                 #self.lybaya = Operator(self.tableVseZayavki)
+                self.lybaya = Operator(self.table2)
             elif typeUser[0] == 4:
-                #self.tableZakazchikaZayavki = self.findChild(QTableWidget, 'tableZakazchikaZayavki')
+                
                 self.stackedWidget.setCurrentWidget(self.Zakazchik)
                 #self.lybaya = Zakazchik(self.tableZakazchikaZayavki)         
+                self.lybaya = Zakazchik(self.table3)         
 
             
             conn.commit() # сохраняет в подключении запросы
