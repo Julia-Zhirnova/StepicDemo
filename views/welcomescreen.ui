@@ -57,7 +57,7 @@ QWidget
         <string notr="true"/>
        </property>
        <property name="currentIndex">
-        <number>4</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="Avtorisation">
         <property name="layoutDirection">
@@ -195,6 +195,9 @@ QWidget
            <property name="text">
             <string>Заказчик</string>
            </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
           </widget>
          </item>
          <item row="1" column="0">
@@ -214,15 +217,14 @@ QWidget
            </property>
           </widget>
          </item>
+         <item row="1" column="0">
+          <widget class="QTableView" name="tableMasteraZayavki"/>
+         </item>
         </layout>
        </widget>
-       <widget class="QWidget" name="Table"/>
        <widget class="QWidget" name="Operator">
         <layout class="QGridLayout" name="gridLayout_3">
-         <item row="1" column="2">
-          <widget class="QTextEdit" name="textEdit"/>
-         </item>
-         <item row="0" column="2">
+         <item row="0" column="0">
           <widget class="QLabel" name="label_9">
            <property name="text">
             <string>Оператор</string>
@@ -232,11 +234,8 @@ QWidget
            </property>
           </widget>
          </item>
-         <item row="1" column="1">
-          <widget class="QTextEdit" name="textEdit_2"/>
-         </item>
          <item row="1" column="0">
-          <widget class="QTextEdit" name="textEdit_3"/>
+          <widget class="QTableView" name="tableVseZayavki"/>
          </item>
         </layout>
        </widget>
@@ -328,13 +327,6 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgb
        </widget>
       </item>
      </layout>
-    </widget>
-   </item>
-   <item row="2" column="0">
-    <widget class="QPushButton" name="pushButton">
-     <property name="text">
-      <string>PushButton</string>
-     </property>
     </widget>
    </item>
   </layout>

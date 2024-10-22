@@ -10,9 +10,7 @@ class Zakazchik(QDialog):
     def __init__(self, table_widget):        
         super(Zakazchik, self).__init__()
         print("Проверка открытия страницы заказчика")
-         # ÐÐ½Ð¸ÑÐ¸Ð°Ð»Ð¸Ð·Ð¸Ñ€ÑÐµÐ¼ Ð¾Ð±ÑÑÑ ÑÐ°Ð±Ð»Ð¸ÑÑ
         self.tableZakazchikaZayavki = table_widget
-        #self.tableVseZayavki = self.findChild(QTableWidget, 'tableVseZayavki')
         self.showdata()
 
     def showdata(self):

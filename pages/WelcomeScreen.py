@@ -57,19 +57,17 @@ class WelcomeScreen(QDialog):
                 self.stackedWidget.setCurrentWidget(self.Manager)
                 self.lybaya = Manager()
             elif typeUser[0] == 2:
+                self.tableMasteraZayavki = self.findChild(QTableWidget, 'tableMasteraZayavki')
                 self.stackedWidget.setCurrentWidget(self.Master)
-                self.lybaya = Master()
+                self.lybaya = Master(self.tableMasteraZayavki)
             elif typeUser[0] == 3:
-                self.tableVseZayavki = self.findChild(QTableWidget, 'tableVseZayavki')
-                #self.pages = {
-                #    self.stackedWidget.currentWidget(): Operator(self.tableVseZayavki)            
-                #}
+                #self.tableVseZayavki = self.findChild(QTableWidget, 'tableVseZayavki')                
                 self.stackedWidget.setCurrentWidget(self.Operator)
-                self.lybaya = Operator(self.tableVseZayavki)
+                #self.lybaya = Operator(self.tableVseZayavki)
             elif typeUser[0] == 4:
-                self.tableZakazchikaZayavki = self.findChild(QTableWidget, 'tableZakazchikaZayavki')
+                #self.tableZakazchikaZayavki = self.findChild(QTableWidget, 'tableZakazchikaZayavki')
                 self.stackedWidget.setCurrentWidget(self.Zakazchik)
-                self.lybaya = Zakazchik(self.tableZakazchikaZayavki)         
+                #self.lybaya = Zakazchik(self.tableZakazchikaZayavki)         
 
             
             conn.commit() # сохраняет в подключении запросы

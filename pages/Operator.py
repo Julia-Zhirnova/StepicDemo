@@ -1,9 +1,7 @@
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import (    
     QDialog, # это базовый класс диалогового окна
-    QTableWidgetItem,
-    QTableWidget,
-    QWidget  # для работы с таблицами
+    QTableWidgetItem  # для работы с таблицами
 )
 
 import sqlite3
@@ -12,9 +10,7 @@ class Operator(QDialog):
     def __init__(self, table_widget):        
         super(Operator, self).__init__()
         print("Проверка открытия страницы оператора")
-         # ÐÐ½Ð¸ÑÐ¸Ð°Ð»Ð¸Ð·Ð¸Ñ€ÑÐµÐ¼ Ð¾Ð±ÑÑÑ ÑÐ°Ð±Ð»Ð¸ÑÑ
         self.tableVseZayavki = table_widget
-        #self.tableVseZayavki = self.findChild(QTableWidget, 'tableVseZayavki')
         self.showdata()
 
     def showdata(self):
