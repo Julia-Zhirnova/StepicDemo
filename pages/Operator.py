@@ -18,7 +18,18 @@ class Operator(QDialog):
     def showdata(self):
         conn1 = sqlite3.connect("uchet.db")
         cur1 = conn1.cursor()
-        data = cur1.execute("SELECT * FROM requests")
+        data = cur1.execute(f"""SELECT
+                                IDrequest AS "Идентификатор заявки",
+                                startDate AS "Дата начала заявки",
+                                orgTechTypeID AS "ID типа техники",
+                                orgTechModel AS "Модель техники",
+                                problemDescryption AS "Описание проблемы",
+                                requestStatusID AS "ID статуса заявки",
+                                completionDate AS "Дата завершения",
+                                repairParts AS "Замененные запчасти",
+                                masterID AS "ID мастера",
+                                clientID AS "ID клиента"
+                                FROM requests;""")
         col_name = [i[0] for i in data.description]
         print(col_name)
         data_rows = data.fetchall()
