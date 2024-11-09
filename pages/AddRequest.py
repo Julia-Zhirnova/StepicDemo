@@ -74,6 +74,9 @@ class AddRequest(QDialog):
         orgTechTypeID = self.orgTechTypeIDField.text() 
         print(orgTechTypeID)
 
+        orgTechModel = self.orgTechModelField.text() 
+        print(orgTechModel)
+
         problemDescryption = self.problemDescryptionField.text() 
         print(problemDescryption)
 
@@ -94,7 +97,7 @@ class AddRequest(QDialog):
 
         conn1 = sqlite3.connect("uchet.db")
         cur1 = conn1.cursor()
-        print("test1")
+               
         cur1.execute(f"""INSERT INTO requests (
                         IDrequest, 
                         startDate, 
@@ -107,16 +110,16 @@ class AddRequest(QDialog):
                         masterID, 
                         clientID
                     ) VALUES (
-                        14,        -- IDrequest (INTEGER)
-                        "2024-11-09",        -- startDate (TEXT)
-                        1,        -- orgTechTypeID (INTEGER)
-                        "DEXP Atlas H388",        -- orgTechModel (TEXT)
-                        "Перестал работать",        -- problemDescryption (TEXT)
-                        1,        -- requestStatusID (INTEGER)
-                        "2024-11-11",        -- completionDate (TEXT)
-                        "запчасти",        -- repairParts (TEXT)
-                        1,        -- masterID (INTEGER)
-                        1         -- clientID (INTEGER)
+                        {IDrequest},        -- IDrequest (INTEGER)
+                        "{startDate}",        -- startDate (TEXT)
+                        {orgTechTypeID},        -- orgTechTypeID (INTEGER)
+                        "{orgTechModel}",        -- orgTechModel (TEXT)
+                        "{problemDescryption}",        -- problemDescryption (TEXT)
+                        {requestStatusID},        -- requestStatusID (INTEGER)
+                        "{completionDate}",        -- completionDate (TEXT)
+                        "{repairParts}",        -- repairParts (TEXT)
+                        {masterID},        -- masterID (INTEGER)
+                        {clientID}         -- clientID (INTEGER)
                     );
                     """)
         print("test")
