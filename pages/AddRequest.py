@@ -92,3 +92,34 @@ class AddRequest(QDialog):
         clientID = self.clientIDField.text() 
         print(clientID)
 
+        conn1 = sqlite3.connect("uchet.db")
+        cur1 = conn1.cursor()
+        print("test1")
+        cur1.execute(f"""INSERT INTO requests (
+                        IDrequest, 
+                        startDate, 
+                        orgTechTypeID, 
+                        orgTechModel, 
+                        problemDescryption, 
+                        requestStatusID, 
+                        completionDate, 
+                        repairParts, 
+                        masterID, 
+                        clientID
+                    ) VALUES (
+                        14,        -- IDrequest (INTEGER)
+                        "2024-11-09",        -- startDate (TEXT)
+                        1,        -- orgTechTypeID (INTEGER)
+                        "DEXP Atlas H388",        -- orgTechModel (TEXT)
+                        "Перестал работать",        -- problemDescryption (TEXT)
+                        1,        -- requestStatusID (INTEGER)
+                        "2024-11-11",        -- completionDate (TEXT)
+                        "запчасти",        -- repairParts (TEXT)
+                        1,        -- masterID (INTEGER)
+                        1         -- clientID (INTEGER)
+                    );
+                    """)
+        print("test")
+        conn1.commit()
+        conn1.close()
+
