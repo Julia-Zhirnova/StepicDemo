@@ -3,7 +3,9 @@
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import (    
     QDialog, # это базовый класс диалогового окна
-    QTableWidget
+    QTableWidget,
+    QPushButton,
+    QLineEdit
 )
 
 from PyQt5.uic import loadUi # загрузка интерфейса, созданного в Qt Creator
@@ -14,6 +16,7 @@ from pages.Zakazchik import Zakazchik
 from pages.Operator import Operator
 from pages.Manager import Manager
 from pages.Master import Master
+from pages.AddRequest import AddRequest
 
 
 # Окно приветствия
@@ -44,6 +47,30 @@ class WelcomeScreen(QDialog):
 
         if len(user)==0 or len(password)==0: # если пользователь оставил пустые поля
             self.ErrorField.setText("Заполните все поля") # выводим ошибку в поле
+        elif user=="1":
+            self.SaveButton = self.findChild(QPushButton, 'SaveButton')
+            self.IDrequestField = self.findChild(QLineEdit, 'IDrequestField')
+            self.startDateField = self.findChild(QLineEdit, 'startDateField')
+            self.orgTechTypeIDField = self.findChild(QLineEdit, 'orgTechTypeIDField')
+            self.orgTechModelField = self.findChild(QLineEdit, 'orgTechModelField')
+            self.problemDescryptionField = self.findChild(QLineEdit, 'problemDescryptionField')
+            self.requestStatusIDField = self.findChild(QLineEdit, 'requestStatusIDField')
+            self.completionDateField = self.findChild(QLineEdit, 'completionDateField')
+            self.repairPartsField = self.findChild(QLineEdit, 'repairPartsField')
+            self.masterIDField = self.findChild(QLineEdit, 'masterIDField')            
+            self.clientIDField = self.findChild(QLineEdit, 'clientIDField')
+            self.stackedWidget.setCurrentWidget(self.AddRequest)
+            self.lybaya = AddRequest(self.SaveButton,
+                                     self.IDrequestField,                                     
+                                     self.startDateField,
+                                     self.orgTechTypeIDField,
+                                     self.orgTechModelField,
+                                     self.problemDescryptionField,
+                                     self.requestStatusIDField,
+                                     self.completionDateField,
+                                     self.repairPartsField,
+                                     self.masterIDField,
+                                     self.clientIDField) 
         else:
             self.ErrorField.setText(" ") # выводим ошибку в поле
             conn = sqlite3.connect("uchet.db") # подключение к базе данных в () изменить на название своей БД
@@ -69,7 +96,8 @@ class WelcomeScreen(QDialog):
                 self.stackedWidget.setCurrentWidget(self.Zakazchik)
                 cur.execute('SELECT IDuser FROM users WHERE login=(?) and password=(?)', [user, password]) # получаем тип пользователя, логин и пароль которого был введен
                 userID = cur.fetchone() # получает только один тип пользователя
-                self.lybaya = Zakazchik(self.tableZakazchikaZayavki, userID)      
+                self.lybaya = Zakazchik(self.tableZakazchikaZayavki, userID)
+                  
                     
            
             conn.commit() # сохраняет в подключении запросы

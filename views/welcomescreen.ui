@@ -57,7 +57,7 @@ QWidget
         <string notr="true"/>
        </property>
        <property name="currentIndex">
-        <number>3</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="Avtorisation">
         <property name="layoutDirection">
@@ -286,15 +286,14 @@ QWidget
            <property name="verticalSpacing">
             <number>10</number>
            </property>
-           <item row="0" column="0">
-            <widget class="QLabel" name="label_13">
-             <property name="text">
-              <string>IDrequest</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
+           <item row="5" column="1">
+            <widget class="QLineEdit" name="repairPartsField"/>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLineEdit" name="startDateField"/>
+           </item>
+           <item row="9" column="1">
+            <widget class="QLineEdit" name="clientIDField"/>
            </item>
            <item row="0" column="1">
             <widget class="QLabel" name="label_17">
@@ -306,21 +305,8 @@ QWidget
              </property>
             </widget>
            </item>
-           <item row="1" column="0">
-            <widget class="QLineEdit" name="lineEdit_4"/>
-           </item>
-           <item row="1" column="1">
-            <widget class="QLineEdit" name="lineEdit_7"/>
-           </item>
-           <item row="2" column="0">
-            <widget class="QLabel" name="label_14">
-             <property name="text">
-              <string>startDate</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
+           <item row="9" column="0">
+            <widget class="QLineEdit" name="problemDescryptionField"/>
            </item>
            <item row="2" column="1">
             <widget class="QLabel" name="label_16">
@@ -332,16 +318,23 @@ QWidget
              </property>
             </widget>
            </item>
-           <item row="3" column="0">
-            <widget class="QLineEdit" name="lineEdit_5"/>
+           <item row="1" column="0">
+            <widget class="QLineEdit" name="IDrequestField"/>
            </item>
-           <item row="3" column="1">
-            <widget class="QLineEdit" name="lineEdit_8"/>
-           </item>
-           <item row="4" column="0">
-            <widget class="QLabel" name="label_15">
+           <item row="8" column="1">
+            <widget class="QLabel" name="label_21">
              <property name="text">
-              <string>orgTechTypeID</string>
+              <string>clientID</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_14">
+             <property name="text">
+              <string>startDate</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
@@ -358,16 +351,10 @@ QWidget
              </property>
             </widget>
            </item>
-           <item row="5" column="0">
-            <widget class="QLineEdit" name="lineEdit_6"/>
-           </item>
-           <item row="5" column="1">
-            <widget class="QLineEdit" name="lineEdit_11"/>
-           </item>
-           <item row="6" column="0">
-            <widget class="QLabel" name="label_18">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_13">
              <property name="text">
-              <string>orgTechModel</string>
+              <string>IDrequest</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
@@ -384,11 +371,40 @@ QWidget
              </property>
             </widget>
            </item>
+           <item row="5" column="0">
+            <widget class="QLineEdit" name="orgTechTypeIDField"/>
+           </item>
            <item row="7" column="0">
-            <widget class="QLineEdit" name="lineEdit_9"/>
+            <widget class="QLineEdit" name="orgTechModelField"/>
+           </item>
+           <item row="6" column="0">
+            <widget class="QLabel" name="label_18">
+             <property name="text">
+              <string>orgTechModel</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="label_15">
+             <property name="text">
+              <string>orgTechTypeID</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QLineEdit" name="completionDateField"/>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="requestStatusIDField"/>
            </item>
            <item row="7" column="1">
-            <widget class="QLineEdit" name="lineEdit_10"/>
+            <widget class="QLineEdit" name="masterIDField"/>
            </item>
            <item row="8" column="0">
             <widget class="QLabel" name="label_22">
@@ -400,21 +416,12 @@ QWidget
              </property>
             </widget>
            </item>
-           <item row="8" column="1">
-            <widget class="QLabel" name="label_21">
+           <item row="10" column="1">
+            <widget class="QPushButton" name="SaveButton">
              <property name="text">
-              <string>clientID</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
+              <string>Сохранить</string>
              </property>
             </widget>
-           </item>
-           <item row="9" column="0">
-            <widget class="QLineEdit" name="lineEdit_13"/>
-           </item>
-           <item row="9" column="1">
-            <widget class="QLineEdit" name="lineEdit_12"/>
            </item>
           </layout>
          </item>
